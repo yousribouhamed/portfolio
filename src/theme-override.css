@@ -1,0 +1,144 @@
+:root {
+  --warm: #165800;
+  --paper: #165800;
+  --muted: #ffffff;
+}
+
+html,
+body,
+#root,
+.portfolio-site {
+  background: #165800 !important;
+  color: #ffffff !important;
+}
+
+body,
+.portfolio-site,
+.hero,
+.services-section,
+.clients-section,
+.scroll-story,
+.selected-work {
+  background: #165800 !important;
+  color: #ffffff !important;
+}
+
+.portfolio-site :where(h1, h2, h3, p, a, button, span, strong, em),
+.hero-copy h1,
+.hero-role,
+.service-copy h3,
+.service-copy p,
+.section-heading h2,
+.section-heading p,
+.clients-copy h2,
+.clients-intro,
+.work-list a,
+.work-list span,
+.scroll-story h2 {
+  color: #ffffff !important;
+}
+
+.story-pill {
+  background: #cdff01 !important;
+  color: #165800 !important;
+}
+
+.service-copy h3 .nineties-font {
+  color: #cdff01 !important;
+}
+
+.nav-pill,
+.social-links,
+.nav-pill a,
+.social-links a,
+.social-links button {
+  color: #cdff01 !important;
+}
+
+.site-footer {
+  background: #165800 !important;
+  color: #ffffff !important;
+}
+
+.hero-backdrop,
+.hero-vignette {
+  background: #165800 !important;
+}
+
+.hero-backdrop::before,
+.hero-backdrop::after,
+.shape-orb,
+.shape-pill,
+.shape-poly {
+  background: #165800 !important;
+  background-image: none !important;
+  border-color: #165800 !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+.shape-ring {
+  background: transparent !important;
+  border-color: #165800 !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+.shape-ring::before,
+.shape-ring::after,
+[class*="shape"]::before,
+[class*="shape"]::after {
+  background-color: #165800 !important;
+  background-image: none !important;
+  border-color: #165800 !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+[class*="shape"]:not(img):not(svg) {
+  background-color: #165800 !important;
+  background-image: none !important;
+  border-color: #165800 !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+.section-heading h2,
+.service-copy h3 {
+  font-weight: 760 !important;
+  letter-spacing: -0.065em !important;
+  text-shadow: none !important;
+}
+
+.service-copy h3 .nineties-font {
+  font-weight: 500 !important;
+  text-shadow: none !important;
+}
+
+.portfolio-site :where(.section-heading h2, .service-copy h3, .service-copy h3 span) {
+  text-shadow: none !important;
+}
+
+.scroll-story,
+.scroll-story::before,
+.scroll-story::after,
+.story-stage,
+.story-backdrop {
+  background: #165800 !important;
+  background-image: none !important;
+}
+
+.scroll-story .story-line,
+.scroll-story .story-line-action {
+  background: transparent !important;
+  background-image: none !important;
+}
+
+html body #root .portfolio-site section.scroll-story,
+html body #root .portfolio-site .scroll-story,
+html body #root .portfolio-site .scroll-story > *,
+html body #root .portfolio-site .scroll-story .story-content,
+html body #root .portfolio-site .scroll-story .story-inner {
+  background-color: #165800 !important;
+  background-image: none !important;
+}
