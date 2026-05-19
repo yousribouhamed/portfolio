@@ -1,0 +1,73 @@
+.hero.shader-hero,
+.akis-hero-active {
+  --akis-x: 50%;
+  --akis-y: 45%;
+  --akis-alpha: .72;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at var(--akis-x) var(--akis-y), rgba(205, 255, 1, .18), rgba(205, 255, 1, .07) 12rem, transparent 32rem),
+    radial-gradient(circle at 22% 18%, rgba(205, 255, 1, .12), transparent 24rem),
+    linear-gradient(180deg, #020501 0%, #061306 52%, #010301 100%) !important;
+  overflow: hidden;
+}
+
+.hero.shader-hero .akis-bg-canvas,
+.hero.shader-hero .akis-bg-glow,
+.akis-hero-active .akis-bg-canvas,
+.akis-hero-active .akis-bg-glow {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.hero.shader-hero .akis-bg-canvas,
+.akis-hero-active .akis-bg-canvas {
+  z-index: 0;
+  opacity: .94;
+  mix-blend-mode: screen;
+}
+
+.hero.shader-hero .akis-bg-glow,
+.akis-hero-active .akis-bg-glow {
+  z-index: 1;
+  opacity: var(--akis-alpha);
+  background:
+    radial-gradient(circle at var(--akis-x) var(--akis-y), rgba(205, 255, 1, .34), rgba(205, 255, 1, .12) 11rem, transparent 30rem);
+  filter: blur(10px);
+  transition: opacity .35s ease;
+}
+
+.hero.shader-hero::before,
+.akis-hero-active::before {
+  background:
+    linear-gradient(rgba(205, 255, 1, .055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(205, 255, 1, .045) 1px, transparent 1px) !important;
+  background-size: 48px 48px, 48px 48px !important;
+  opacity: .36 !important;
+  mix-blend-mode: screen;
+}
+
+.hero.shader-hero::after,
+.akis-hero-active::after {
+  background:
+    radial-gradient(circle at 50% 42%, transparent 0 24rem, rgba(0, 0, 0, .45) 58rem),
+    linear-gradient(90deg, rgba(0, 0, 0, .64), transparent 28%, transparent 72%, rgba(0, 0, 0, .64)) !important;
+  opacity: .82 !important;
+}
+
+.hero.shader-hero > *:not(.akis-bg-canvas):not(.akis-bg-glow),
+.akis-hero-active > *:not(.akis-bg-canvas):not(.akis-bg-glow) {
+  position: relative;
+  z-index: 3;
+}
+
+@media (max-width: 760px) {
+  .hero.shader-hero,
+  .akis-hero-active {
+    background:
+      radial-gradient(circle at var(--akis-x) var(--akis-y), rgba(205, 255, 1, .18), transparent 20rem),
+      linear-gradient(180deg, #020501 0%, #061306 54%, #010301 100%) !important;
+  }
+}

@@ -1,0 +1,10 @@
+#mogi-shehata-nav a[href*="Let%27s%20Talk"],
+#mogi-shehata-nav a[href*="Let's%20Talk"],
+.site-nav a[href*="Let%27s%20Talk"],
+.site-nav a[href*="Let's%20Talk"] {
+  background: #cdff01 !important;
+  background-color: #cdff01 !important;
+  color: #165800 !important;
+  border-color: rgba(205, 255, 1, 0.7) !important;
+  font-weight: 800 !important;
+}

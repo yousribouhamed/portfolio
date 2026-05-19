@@ -1,0 +1,14 @@
+.mogi-trusted-heading {
+  display: block !important;
+}
+
+.mogi-trusted-heading .mogi-trusted-line {
+  display: block !important;
+  white-space: nowrap !important;
+}
+
+.mogi-trusted-heading .mogi-trusted-line:first-child {
+  white-space: nowrap !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+}
