@@ -322,7 +322,12 @@ a {
 }
 
 .shehata-cta:hover {
+  color: #165800;
   transform: translateY(-1px);
+}
+
+.shehata-cta:focus-visible {
+  color: #165800;
 }
 
 .nav-mark img {
