@@ -23,7 +23,7 @@ const services = [
     media: ['Audit', 'Flow', 'Dash', 'Mobile', 'Prototype'],
   },
   {
-    title: 'Webflow & React builds',
+    title: 'IOS&Android Apps',
     text: 'Responsive implementation with creative micro-interactions, smooth scrolling, reusable components, and hand-off ready structure.',
     media: ['React', 'GSAP', 'Lenis', 'CMS', 'Handoff'],
   },
@@ -52,7 +52,10 @@ function ServiceTitle({ title }) {
   if (title === 'Websites & landing pages') {
     return (
       <>
-        Websites <span className="nineties-font">&amp;Landing Pages</span>
+        <span className="service-title-line service-title-primary">Websites</span>
+        <span className="service-title-line service-title-secondary nineties-font">
+          &amp;Landing Pages
+        </span>
       </>
     )
   }
@@ -60,7 +63,8 @@ function ServiceTitle({ title }) {
   if (title === 'Visual branding') {
     return (
       <>
-        Visual <span className="nineties-font">Branding</span>
+        <span className="service-title-line service-title-primary">Visual</span>
+        <span className="service-title-line service-title-secondary nineties-font">Branding</span>
       </>
     )
   }
@@ -68,7 +72,19 @@ function ServiceTitle({ title }) {
   if (title === 'Product design enhancement') {
     return (
       <>
-        Product design <span className="nineties-font">Enhancement</span>
+        <span className="service-title-line service-title-primary">Product Design</span>
+        <span className="service-title-line service-title-secondary nineties-font">
+          Enhancement
+        </span>
+      </>
+    )
+  }
+
+  if (title === 'IOS&Android Apps') {
+    return (
+      <>
+        <span className="service-title-line service-title-primary">IOS&amp;Android</span>
+        <span className="service-title-line service-title-secondary nineties-font">Apps</span>
       </>
     )
   }
@@ -218,7 +234,41 @@ function App() {
 
         gsap.utils.toArray('.service-showcase').forEach((row) => {
           const media = gsap.utils.toArray(row.querySelectorAll('.service-media'))
+          const titleLines = gsap.utils.toArray(row.querySelectorAll('.service-title-line'))
           const serviceReveal = gsap.timeline({ paused: true })
+
+          gsap.set(titleLines, {
+            scale: 0.7,
+            transformOrigin: '50% 58%',
+          })
+
+          gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: row,
+                start: 'top 82%',
+                end: 'top 34%',
+                scrub: 0.75,
+              },
+            })
+            .to(
+              titleLines[0],
+              {
+                scale: 1,
+                color: '#ffffff',
+                ease: 'power2.inOut',
+              },
+              0,
+            )
+            .to(
+              titleLines[1],
+              {
+                scale: 1,
+                color: '#cdff01',
+                ease: 'power2.inOut',
+              },
+              0.18,
+            )
 
           serviceReveal.fromTo(
             row.querySelector('.service-copy'),
@@ -372,32 +422,20 @@ function App() {
         <div className="loader-line" />
       </div>
 
-      <nav className="site-nav" aria-label="Primary navigation">
-        <a className="name-lockup" href="#top">
-          <img src="/mogi-logo.svg" alt="Mogi" />
-        </a>
-
-        <div className="nav-pill">
-          <a href="#services">Services</a>
-          <a className="nav-mark" href="#top" aria-label="Home">
+      <nav className="site-nav shehata-nav" aria-label="Primary navigation">
+        <div className="shehata-nav-shell">
+          <a className="shehata-brand" href="#top" aria-label="Mogi home">
             <img src="/mogi-logo.svg" alt="" />
           </a>
-          <a href="#work">Work</a>
-        </div>
-
-        <div className="social-links">
-          <button type="button" onClick={copyEmail}>
-            {copied ? 'Copied' : 'Email'}
+          <span className="shehata-divider" aria-hidden="true" />
+          <a href="#services">About</a>
+          <a href="#services">Career</a>
+          <a href="#work">Experiments</a>
+          <a href="#clients">Founder</a>
+          <a href="#work">Tools</a>
+          <button className="shehata-cta" type="button" onClick={copyEmail}>
+            {copied ? 'COPIED' : "LET'S TALK"}
           </button>
-          <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
-            in
-          </a>
-          <a href="https://x.com/" target="_blank" rel="noreferrer">
-            x
-          </a>
-          <a href="https://www.behance.net/" target="_blank" rel="noreferrer">
-            Be
-          </a>
         </div>
       </nav>
 
